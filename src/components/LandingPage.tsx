@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import IntroGif from "../imgs/intro.gif"
-import IntroImg from "../imgs/intro.png"
+import IntroImg from "../imgs/res.jpeg"
 import textConfig from "../textConfig";
 
 type Props = {
@@ -91,7 +91,7 @@ const LandingPage: React.FC<Props> = ({
             <span className="w-3.5 h-3.5 rounded-full bg-[#fff07a] border border-[#f0cf52]" />
             <span className="w-3.5 h-3.5 rounded-full bg-[#b1f2b1] border border-[#92d992]" />
           </div>
-          <p className="text-sm font-bold text-[#9a4c73] flex items-center gap-1">
+          <p className="handwriting text-sm font-bold text-[#9a4c73] flex items-center gap-1">
             A Note for You
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path
@@ -105,16 +105,16 @@ const LandingPage: React.FC<Props> = ({
 
         {/* Letter Content */}
         <div className="text-center space-y-6 relative">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#1b0d14] leading-snug">
+          <h1 className=" handwriting text-3xl sm:text-4xl md:text-5xl font-black text-[#1b0d14] leading-snug">
             {textConfig.landing.title}
           </h1>
 
-          <div className="text-[#1b0d14]/80 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
+          <div className="handwriting text-[#1b0d14]/80 text-base md:text-lg leading-relaxed relative mx-auto max-w-lg">
             <p>
               {textConfig.landing.subtitle}
             </p>
             <p className="pt-3">
-              <span className="font-semibold text-[#f04299]">{typedText}</span>
+              <span className="handwriting font-semibold text-[#f04299]">{typedText}</span>
               <span className="inline-block w-1.5 h-4 bg-[#f04299]/70 ml-1 animate-cursor" />
             </p>
           </div>
@@ -122,33 +122,35 @@ const LandingPage: React.FC<Props> = ({
           {/* Continue Button */}
           <button
             onClick={handleEnter}
-            className="mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+            className="handwriting mt-4 inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
           >
             {textConfig.landing.button}
           </button>
 
           {/* Landing page decorative image - positioned at bottom left of note */}
-          <div 
-            className="absolute -bottom-6 -left-4 animate-float-slow opacity-70 pointer-events-none"
+          <div
+            className="absolute -bottom-6 -left-4 animate-float-slow opacity-90 pointer-events-none"
             style={{
               transform: 'rotate(-15deg)',
               zIndex: 20
             }}
           >
-            <img
-              src={IntroImg}
-              alt="Decorative"
-              className="w-20 h-auto object-contain"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
+            <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner overflow-hidden">
+
+              <img
+                src={IntroImg}
+                alt="Decorative"
+                className="w-30 h-auto object-cover object-top"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              /></div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="mt-8 text-xs text-[#9a4c73] text-center">
+      <div className="handwriting mt-8 text-xs text-[#9a4c73] text-center">
         {textConfig.landing.footer}
       </div>
 

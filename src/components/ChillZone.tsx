@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import textConfig from "../textConfig";
 
-import music1 from "../music/music1.mp3";
-import music2 from "../music/music2.mp3";
-import music3 from "../music/music3.mp3";
+import music1 from "../music/m1.mp3";
+import music2 from "../music/m2.mp3";
+import music3 from "../music/m3.mp3";
 
-import cover1 from "../musiccover/music1.jpg";
-import cover2 from "../musiccover/music2.jpg";
-import cover3 from "../musiccover/music3.jpg";
+import cover1 from "../imgs/m1.jpeg";
+import cover2 from "../imgs/reswe.jpeg";
+import cover3 from "../imgs/ms3.jpeg";
 
 type Track = {
   id: number;
@@ -53,7 +53,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
   // Initialize audio elements in persistent container
   useEffect(() => {
     const container = getGlobalAudioContainer();
-    
+
     // Create or reuse audio elements
     audioRefs.current = tracks.map((track) => {
       let audio = container.querySelector(`audio[data-track-id="${track.id}"]`) as HTMLAudioElement;
@@ -238,20 +238,24 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
         {/* Header with music emoji */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="text-center">
-            <h2 className="text-[#f04299] text-lg font-bold leading-tight">
+
+            <h2 className="handwriting text-[#f04299] text-lg font-bold leading-tight">
               {textConfig.chillZone.heading}
             </h2>
-            <div className="text-xs text-[#9a4c73]">
+            <div className="handwriting text-xs text-[#9a4c73]">
               {textConfig.chillZone.subheading}
             </div>
           </div>
         </div>
 
+
         {/* Main Panel - centered with proper margins */}
         <div className="bg-[#FFF8E7] rounded-2xl p-4 sm:p-5 md:p-6 border border-pink-200 shadow-md animate-fadeIn mx-auto">
-
+          <h2 className="handwriting text-[#f04299] text-lg font-bold leading-tight text-center mb-5">
+            "From our first conversation on July 28, 2024 to forever — let these songs tell our story 🎶💖"
+          </h2>
           {/* Fixed height container for consistent spacing */}
-          <div className="mb-6 h-20 flex items-center justify-center">
+          <div className="mb-5 h-20 flex items-center justify-center">
             {/* Compact Now Playing Display */}
             {activeIndex != null ? (
               <div className="flex items-center gap-4 p-3 rounded-lg bg-white/70 border border-pink-100 shadow-sm max-w-lg w-full mx-auto">
@@ -259,21 +263,22 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
                   <img
                     src={tracks[activeIndex].cover}
                     alt={tracks[activeIndex].title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
 
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-bold text-[#1b0d14] truncate">
+                  <div className="handwriting text-sm font-bold text-[#1b0d14] truncate">
                     {tracks[activeIndex].title}
                   </div>
-                  <div className="text-xs text-[#9a4c73] mb-2 truncate">
+
+                  <div className="handwriting text-xs text-[#9a4c73] mb-2 truncate">
                     {tracks[activeIndex].caption}
                   </div>
 
                   {/* Compact Progress Bar */}
                   <div className="flex items-center gap-2">
-                    <span className="text-xs text-[#9a4c73] w-8 text-left">{formatTime(currentTime)}</span>
+                    <span className="handwriting text-xs text-[#9a4c73] w-8 text-left">{formatTime(currentTime)}</span>
                     <input
                       type="range"
                       min={0}
@@ -282,7 +287,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
                       onChange={handleSeek}
                       className="flex-1 h-1 accent-[#f04299] appearance-none bg-pink-100 rounded-full"
                     />
-                    <span className="text-xs text-[#9a4c73] w-8 text-right">{formatTime(duration)}</span>
+                    <span className="handwriting text-xs text-[#9a4c73] w-8 text-right">{formatTime(duration)}</span>
                   </div>
                 </div>
 
@@ -290,8 +295,8 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
                 <button
                   onClick={() => togglePlay(activeIndex)}
                   className={`w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-all transform ${isPlaying
-                      ? "bg-[#f04299] text-white scale-105"
-                      : "bg-white text-[#f04299] border border-pink-200"
+                    ? "bg-[#f04299] text-white scale-105"
+                    : "bg-white text-[#f04299] border border-pink-200"
                     } hover:scale-110 focus:outline-none focus:ring-2 focus:ring-pink-300`}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -307,22 +312,22 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
                 </button>
               </div>
             ) : (
-              <div className="text-base text-[#9a4c73] font-medium text-center">
+              <div className="handwriting text-base text-[#9a4c73] font-medium text-center">
                 {textConfig.chillZone.chooseTrackHint}
               </div>
             )}
           </div>
 
           {/* Track Selection Section */}
-          <div className="mb-8">
+          <div className="mb-4">
             {/* Horizontal Scrollable Cards with Navigation */}
             <div className="relative max-w-4xl mx-auto">
               {/* Left Arrow */}
               <button
                 onClick={scrollLeft}
-                className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-pink-200 flex items-center justify-center transition-all ${canScrollLeft
-                    ? "text-[#f04299] hover:scale-110 hover:shadow-pink-300/50"
-                    : "text-gray-300 cursor-not-allowed"
+                className={`handwriting absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-pink-200 flex items-center justify-center transition-all ${canScrollLeft
+                  ? "text-[#f04299] hover:scale-110 hover:shadow-pink-300/50"
+                  : "text-gray-300 cursor-not-allowed"
                   } focus:outline-none focus:ring-4 focus:ring-pink-300`}
                 disabled={!canScrollLeft}
               >
@@ -335,8 +340,8 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
               <button
                 onClick={scrollRight}
                 className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-pink-200 flex items-center justify-center transition-all ${canScrollRight
-                    ? "text-[#f04299] hover:scale-110 hover:shadow-pink-300/50"
-                    : "text-gray-300 cursor-not-allowed"
+                  ? "text-[#f04299] hover:scale-110 hover:shadow-pink-300/50"
+                  : "text-gray-300 cursor-not-allowed"
                   } focus:outline-none focus:ring-4 focus:ring-pink-300`}
                 disabled={!canScrollRight}
               >
@@ -358,14 +363,14 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
                     <div
                       key={track.id}
                       className={`group relative cursor-pointer transform transition-all duration-300 flex-shrink-0 w-56 ${active
-                          ? "scale-105 z-10"
-                          : "hover:scale-105 hover:z-10"
+                        ? "scale-105 z-10"
+                        : "hover:scale-105 hover:z-10"
                         }`}
                       onClick={() => togglePlay(index)}
                     >
                       <div className={`relative bg-white rounded-xl p-4 border-2 shadow-lg transition-all ${active
-                          ? "border-pink-300 shadow-pink-200/50 bg-pink-50/80"
-                          : "border-pink-100 hover:border-pink-200 hover:shadow-xl group-hover:shadow-pink-200/30"
+                        ? "border-pink-300 shadow-pink-200/50 bg-pink-50/80"
+                        : "border-pink-100 hover:border-pink-200 hover:shadow-xl group-hover:shadow-pink-200/30"
                         }`}>
 
                         {/* Album Cover */}
@@ -374,7 +379,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
                             <img
                               src={track.cover}
                               alt={track.title}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-cover object-top"
                             />
                           </div>
 
@@ -402,10 +407,10 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
 
                         {/* Track Info */}
                         <div className="text-center">
-                          <div className="font-bold text-[#1b0d14] mb-1 text-sm">
+                          <div className="handwriting font-bold text-[#1b0d14] mb-1 text-sm">
                             {track.title}
                           </div>
-                          <div className="text-xs text-[#9a4c73] leading-relaxed">
+                          <div className="handwriting text-xs text-[#9a4c73] leading-relaxed">
                             {track.caption}
                           </div>
                         </div>
@@ -421,7 +426,7 @@ export default function ChillZone({ onNext }: ChillZoneProps) {
           <div className="text-center">
             <button
               onClick={onNext}
-              className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+              className="handwriting inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
             >
               {textConfig.chillZone.continueButton}
             </button>

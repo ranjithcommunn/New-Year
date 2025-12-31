@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import textConfig from "../textConfig";
-import LetterImg from "../imgs/letter.png"
+import LetterImg from "../imgs/sr.jpeg"
 import StampSVG from "./StampSVG";
 
 interface ActivityPageProps {
@@ -54,19 +54,19 @@ export default function ActivityPage({
   // Add sparkles on hover
   const addSparkle = (e: React.MouseEvent) => {
     if (isEnvelopeOpen) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     const newSparkle = {
       id: Date.now() + Math.random(),
       x: x,
       y: y
     };
-    
+
     setSparkles(prev => [...prev, newSparkle]);
-    
+
     // Remove sparkle after animation
     setTimeout(() => {
       setSparkles(prev => prev.filter(s => s.id !== newSparkle.id));
@@ -113,10 +113,10 @@ export default function ActivityPage({
         {/* Header */}
         <div className="flex items-center justify-center gap-2 mb-6 animate-slideDown">
           <div className="text-center">
-            <h2 className="text-[#f04299] text-lg sm:text-xl font-bold leading-tight">
+            <h2 className="handwriting text-[#f04299] text-lg sm:text-xl font-bold leading-tight">
               {textConfig.letter.headerTitle}
             </h2>
-            <div className="text-xs text-[#9a4c73] mt-1">
+            <div className="handwriting text-xs text-[#9a4c73] mt-1">
               {textConfig.letter.headerSubtitle}
             </div>
           </div>
@@ -124,14 +124,13 @@ export default function ActivityPage({
 
         {/* Main Panel */}
         <div className="bg-[#FFF8E7] rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-pink-200 shadow-xl animate-fadeIn">
-          
+
           {!showLetter ? (
             /* Envelope Section */
             <div className="flex flex-col items-center justify-center min-h-[400px] relative">
-              <div 
-                className={`relative cursor-pointer transition-all duration-800 transform ${
-                  isEnvelopeOpen ? 'scale-110 rotate-2' : 'hover:scale-105 hover:-rotate-1'
-                }`}
+              <div
+                className={`relative cursor-pointer transition-all duration-800 transform ${isEnvelopeOpen ? 'scale-110 rotate-2' : 'hover:scale-105 hover:-rotate-1'
+                  }`}
                 onClick={handleEnvelopeClick}
                 onMouseMove={addSparkle}
               >
@@ -154,12 +153,11 @@ export default function ActivityPage({
                 <div className="relative w-80 h-56 mx-auto">
                   {/* Envelope Body */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#FFE4E6] to-[#FFF0F5] rounded-lg shadow-lg border-2 border-pink-200" />
-                  
+
                   {/* Envelope Flap */}
-                  <div 
-                    className={`absolute -top-1 left-0 right-0 h-28 bg-gradient-to-br from-[#FFD1DC] to-[#FFC0CB] transition-all duration-800 origin-top ${
-                      isEnvelopeOpen ? '-rotate-12 translate-y-2' : ''
-                    }`}
+                  <div
+                    className={`absolute -top-1 left-0 right-0 h-28 bg-gradient-to-br from-[#FFD1DC] to-[#FFC0CB] transition-all duration-800 origin-top ${isEnvelopeOpen ? '-rotate-12 translate-y-2' : ''
+                      }`}
                     style={{
                       clipPath: 'polygon(0 0, 100% 0, 50% 100%)',
                       borderRadius: '8px 8px 0 0'
@@ -185,8 +183,8 @@ export default function ActivityPage({
 
                 {!isEnvelopeOpen && (
                   <div className="text-center mt-6">
-                    <p className="text-sm text-[#9a4c73] mb-2">{textConfig.letter.envelopeClickHint}</p>
-                    <div className="inline-block px-4 py-2 bg-pink-50 rounded-full text-xs font-medium text-[#f04299] border border-pink-200 animate-pulse">
+                    <p className="handwriting text-md text-[#9a4c73] mb-2">{textConfig.letter.envelopeClickHint}</p>
+                    <div className="handwriting inline-block px-4 py-2 bg-pink-50 rounded-full text-xs font-medium text-[#f04299] border border-pink-200 animate-pulse">
                       {textConfig.letter.specialDeliveryText}
                     </div>
                   </div>
@@ -199,24 +197,27 @@ export default function ActivityPage({
               <div className="bg-white rounded-xl p-6 sm:p-8 shadow-inner border border-pink-100 min-h-[350px] relative">
                 {/* Paper texture background */}
                 <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-pink-50 to-transparent rounded-xl" />
-                
+
                 {/* Letter image - positioned relative to this letter container */}
-                <div 
-                  className="absolute -top-6 -right-6 animate-float-slow opacity-80 pointer-events-none z-30"
+                <div
+                  className="absolute -top-6 -right-6 animate-float-slow pointer-events-none z-30"
                   style={{
                     transform: 'rotate(15deg)',
                   }}
                 >
-                  <img
-                    src={LetterImg}
-                    alt="Love"
-                    className="w-24 h-auto object-contain drop-shadow-lg"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
+                  <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner overflow-hidden">
+                    <img
+                      src={LetterImg}
+                      alt="Love"
+                      className="w-24 h-auto object-cover object-top drop-shadow-lg"
+
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  </div>
                 </div>
-                
+
                 {/* Letter header */}
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4 pb-3 border-b border-pink-100 relative">
@@ -224,22 +225,22 @@ export default function ActivityPage({
                       <div className="w-6 h-6 rounded-full bg-[#f04299] flex items-center justify-center text-white text-sm">
                         💝
                       </div>
-                      <span className="text-sm font-semibold text-[#9a4c73]">{textConfig.letter.letterHeaderTitle}</span>
+                      <span className="handwriting text-[30px] font-semibold text-[#9a4c73]">{textConfig.letter.letterHeaderTitle}</span>
                     </div>
                   </div>
 
                   {/* Letter content - proper letter formatting */}
-                  <div className="handwriting text-sm sm:text-base leading-relaxed text-[#1b0d14] pb-20 pt-6">
+                  <div className="handwriting text-sm sm:text-base leading-relaxed text-[#1b0d14] pb-20 pt-2">
                     {/* Greeting - left aligned */}
                     <div className="mb-4 text-[#f04299] font-medium">
                       {greeting}
                     </div>
-                    
+
                     {/* Main body - with proper paragraph indentation */}
                     <div className="mb-6 text-justify" style={{ textIndent: '2rem' }}>
                       {bodyContent}
                     </div>
-                    
+
                     {/* Signature with typing animation - positioned like a real letter signature */}
                     <div className="mt-8 ml-auto w-fit">
                       <div className="font-medium text-[#f04299]">
@@ -267,7 +268,7 @@ export default function ActivityPage({
                 <div className="flex justify-center mt-6 animate-slideUp">
                   <button
                     onClick={onNext}
-                    className="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
+                    className=" handwriting inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#f04299] text-white font-semibold shadow-md transition-all transform hover:scale-105 active:scale-95 hover:shadow-pink-300/50 focus:outline-none focus:ring-4 focus:ring-pink-300"
                   >
                     {textConfig.letter.continueButton}
                   </button>

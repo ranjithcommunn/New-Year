@@ -1,4 +1,4 @@
-import React from "react";
+
 
 type Props = {
   size?: number; // pixels
@@ -81,7 +81,7 @@ export default function StampSvg({
       />
 
       {/* top curved text */}
-     <path id="topArc" d="M50 90 A45 45 0 0 1 150 95" fill="none" />
+      <path id="topArc" d="M50 90 A45 45 0 0 1 150 95" fill="none" />
 
       <text
         fontSize="14"
@@ -99,7 +99,7 @@ export default function StampSvg({
       </text>
 
       {/* bottom curved text */}
-     <path
+      <path
         id="bottomArc"
         d="M155 110 A55 50 0 0 1 45 110"
         fill="none"

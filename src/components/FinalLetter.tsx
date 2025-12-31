@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Mail, Heart, Star } from "lucide-react";
 import textConfig from "../textConfig";
+import Rs from "../imgs/rs.jpg"
 
 interface FinalLetterProps {
   onRestart: () => void;
@@ -120,16 +121,15 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#fff0f4]/75">
           <div className="flex flex-col items-center gap-3">
             <div className="text-7xl animate-seal-spin">💌</div>
-            <div className="text-sm text-[#9a4c73]">{textConfig.finalLetter.sealingText}</div>
+            <div className="handwriting text-sm text-[#9a4c73]">{textConfig.finalLetter.sealingText}</div>
           </div>
         </div>
       )}
 
       {/* main centered letter */}
       <div
-        className={`relative z-10 w-full max-w-2xl transition-all duration-600 ${
-          showLetter ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        }`}
+        className={`relative z-10 w-full max-w-2xl transition-all duration-600 ${showLetter ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
       >
         {!isSealed ? (
           <div className="bg-[#FFF8E7] rounded-3xl p-6 sm:p-8 shadow-xl border border-pink-100">
@@ -138,47 +138,47 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 <div className="w-10 h-10 rounded-full bg-[#f04299] flex items-center justify-center text-white shadow-md">
                   <Mail size={18} />
                 </div>
-                <h3 className="text-xl sm:text-2xl font-extrabold text-[#1b0d14]">{textConfig.finalLetter.title}</h3>
+                <h3 className="handwriting text-xl sm:text-2xl font-extrabold text-[#1b0d14]">{textConfig.finalLetter.title}</h3>
               </div>
             </div>
 
             <article className="handwriting text-sm sm:text-base text-[#1b0d14] leading-relaxed space-y-4">
-              <p className="text-[#f04299] font-semibold">{textConfig.finalLetter.letterGreeting}</p>
+              <p className="handwriting text-[#f04299] font-semibold">{textConfig.finalLetter.letterGreeting}</p>
 
-              <p>
+              <p className="handwriting">
                 {textConfig.finalLetter.letterParagraphs[0]}
               </p>
 
-              <p className="text-[#7fbcd9]">
+              <p className="handwriting">
                 {textConfig.finalLetter.letterParagraphs[1]}
               </p>
 
-              <p>
+              <p className="handwriting">
                 {textConfig.finalLetter.letterParagraphs[2]}
               </p>
 
-              <p className="text-[#cdb4db]">
+              <p className="handwriting">
                 {textConfig.finalLetter.letterParagraphs[3]}
               </p>
 
-              <p className="text-[#f04299] font-medium">{textConfig.finalLetter.letterParagraphs[4]}</p>
+              <p className="handwriting text-md text-[#f04299] font-medium">{textConfig.finalLetter.letterParagraphs[4]}</p>
             </article>
 
             <div className="mt-6 flex flex-col sm:flex-row justify-between gap-3 items-center">
-              <div className="text-xs text-[#9a4c73]">{textConfig.finalLetter.sealingNote}</div>
+              <div className="handwriting text-xs text-[#9a4c73]">{textConfig.finalLetter.sealingNote}</div>
               <div className="flex gap-3">
                 <button
                   onClick={() => {
                     sealLetter();
                   }}
-                  className="rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-5 py-2.5 text-sm sm:text-base font-bold shadow-md hover:scale-105 transition"
+                  className="handwriting rounded-full bg-gradient-to-r from-[#ff9aa8] to-[#ffd1dc] px-5 py-2.5 text-sm sm:text-base font-bold shadow-md hover:scale-105 transition"
                 >
                   {textConfig.finalLetter.sealButton}
                 </button>
 
                 <button
                   onClick={onRestart}
-                  className="rounded-full bg-[#9be7c4] px-4 py-2.5 text-sm sm:text-base font-medium shadow-md hover:brightness-95 transition"
+                  className="handwriting rounded-full bg-[#9be7c4] px-4 py-2.5 text-sm sm:text-base font-medium shadow-md hover:brightness-95 transition"
                 >
                   {textConfig.finalLetter.restartButton}
                 </button>
@@ -187,14 +187,19 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
           </div>
         ) : (
           <div className="bg-[#FFF8E7] rounded-3xl p-8 sm:p-10 shadow-2xl border border-pink-100 text-center">
-            <div className="mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner">
-              <div className="text-4xl">💝</div>
+            <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ffbcd2] to-[#ffd1dc] flex items-center justify-center shadow-inner overflow-hidden">
+              <img
+                src={Rs}
+                alt="Profile"
+                className="h-full w-full object-cover object-top"
+              />
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-[#f04299] mb-2">
+
+            <h2 className="handwriting text-2xl sm:text-3xl font-black text-[#f04299] mb-2">
               {textConfig.finalLetter.sealedTitle}
             </h2>
-            <p className="text-sm sm:text-base text-[#9a4c73] mb-5">
+            <p className="handwriting text-sm sm:text-base text-[#9a4c73] mb-5">
               {textConfig.finalLetter.sealedSubtitle}
             </p>
 
@@ -210,9 +215,9 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             </div>
 
             <div className="text-lg sm:text-xl font-semibold text-[#1b0d14] mb-1">
-              <span className="text-[#c0396f]">{typedText || textConfig.finalLetter.typedDefault}</span>
+              <span className="handwriting text-[#c0396f]">{typedText || textConfig.finalLetter.typedDefault}</span>
             </div>
-            <div className="text-xs text-[#9a4c73] mb-6">
+            <div className="handwriting text-md text-[#9a4c73] mb-6">
               {new Date().toLocaleDateString(textConfig.finalLetter.dateLocale, {
                 weekday: "long",
                 year: "numeric",
@@ -224,7 +229,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <button
                 onClick={onRestart}
-                className="rounded-full bg-[#f04299] text-white px-5 py-2.5 text-sm sm:text-base font-semibold shadow hover:scale-105 transition"
+                className="handwriting rounded-full bg-[#f04299] text-white px-5 py-2.5 text-sm sm:text-base font-semibold shadow hover:scale-105 transition"
               >
                 {textConfig.finalLetter.experienceAgain}
               </button>
@@ -233,7 +238,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 onClick={() => {
                   sendKiss();
                 }}
-                className="rounded-full bg-[#9be7c4] px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition"
+                className="handwriting rounded-full bg-[#9be7c4] px-5 py-2.5 text-sm sm:text-base font-medium shadow hover:brightness-95 transition"
               >
                 {textConfig.finalLetter.sendKissButton}
               </button>

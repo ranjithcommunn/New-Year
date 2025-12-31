@@ -5,14 +5,18 @@ const textConfig = {
     lastLine: "Click below to see what it is! ✨",
     button: "Open My Heart 💖",
     footer: "Made with love, only for you 💕",
-    },
-    landing: {
-      title: "Happy New Year 2026! 🎉",
-      subtitle: "Wishing you joy, success, and endless happiness in the coming year!",
-      lastLine: "Click below to start your New Year journey! ✨",
-      button: "Begin Celebration 🎊",
-      footer: "Cheers to a wonderful 2026! 🎉",
-    },
+  },
+  landing: {
+    title: "Happy New Year 2026, My Baby 🎉💖",
+    subtitle:
+      "A brand new year, a brand new chapter — and my favorite part is starting it with you by my side.",
+    lastLine:
+      "This little journey is filled with my love, my feelings, and everything my heart wants to tell you ✨",
+    button: "Begin Our Celebration 💕",
+    footer:
+      "To more smiles, more memories, and a lifetime together — cheers to us in 2026 🥂💖",
+  },
+
 
   // ActivityPage/Letter configuration
   letter: {
@@ -29,21 +33,28 @@ I want you to know that you are the most precious person in my life. Every day w
     envelopeClickHint: "Click to open the envelope",
     specialDeliveryText: "Special Delivery 💌",
     continueButton: "Continue To See More ✨"
-    },
-    letter: {
-      headerTitle: "A New Year Letter 💌",
-      headerSubtitle: "Warm wishes for 2026",
-      letterHeaderTitle: "Dear Friend",
-      letterMessage: `Dear Friend,
+  },
+  letter: {
+    headerTitle: "A New Year Letter 💌",
+    headerSubtitle: "From my heart to yours, Baby",
+    letterHeaderTitle: "My Dearest Baby 💖",
+    letterMessage: `My Baby,
 
-  As the year turns, may your days be filled with laughter, love, and new adventures. May every dream you chase bring you closer to happiness and every moment be a memory worth cherishing.
+Our story began on July 28th, 2024 — the day we started talking, not knowing it would become the most beautiful journey of our lives. Then, on January 1st, 2025, you proposed to me and completely changed my world in the most magical way.
 
-  Wishing you a fantastic 2026 ahead!\n\nHappy New Year! 🎉\n`,
-      letterSignature: "Cheers! 🎉",
-      envelopeClickHint: "Click to open your New Year wish",
-      specialDeliveryText: "Special Delivery 🎉",
-      continueButton: "Continue To Celebrate ✨"
-    },
+You love me more than I love myself, you care for me endlessly, and you stand by me no matter what. Your support, your kindness, and your pure heart make every day brighter for me.
+
+These past 1.5 years with you have been the happiest chapter of my life, and I can’t wait to write many more with you. May 2026 bring you all the happiness you deserve — and may I always be the reason behind your smile.
+
+Happy New Year, My Baby 💕
+`,
+
+    letterSignature: "Forever Yours, Ranjith 💫",
+    envelopeClickHint: "Tap to open my letter for you 💌",
+    specialDeliveryText: "A Letter Full of Love 💖",
+    continueButton: "Continue Our Celebration ✨"
+  },
+
 
   chillZone: {
     heading: "A Dedicated Playlist For You",
@@ -55,18 +66,32 @@ I want you to know that you are the most precious person in my life. Every day w
       { id: 2, title: "If the world was ending", caption: "Even if the world ends, I'd still find you 🤍" },
       { id: 3, title: "Dil ka Jo Haal hai", caption: "Tu Kaare Dil Bekarar 💞" }
     ]
-    },
-    chillZone: {
-      heading: "New Year Playlist",
-      subheading: "Celebrate with these festive tracks!",
-      chooseTrackHint: "Choose a song to start the party ✨",
-      continueButton: "Continue to Next ✨",
-      tracks: [
-        { id: 1, title: "Happy New Year - ABBA", caption: "Classic vibes for a fresh start! 🎊" },
-        { id: 2, title: "Auld Lang Syne", caption: "Remember the good times and friends! 🎉" },
-        { id: 3, title: "Firework - Katy Perry", caption: "Shine bright in 2026! 🎉" }
-      ]
-    },
+  },
+  chillZone: {
+    heading: "New Year Playlist",
+    subheading: "Celebrate with these festive tracks!",
+    chooseTrackHint: "Choose a song to start the party ✨",
+    continueButton: "Continue to Next ✨",
+    tracks: [
+      {
+        id: 1,
+        title: "Chusi Chudangane Nachesave",
+        caption: "Love at first sight vibes to start the year 💕✨"
+      },
+      {
+        id: 2,
+        title: "Anisuthide Yaako Indu Ninne ",
+        caption: "Timeless Kannada romance for a magical beginning 💖🎶"
+      },
+
+      {
+        id: 3,
+        title: "Nanu Novu Andare",
+        caption: "Deep emotions and soulful melodies to feel every moment 💙🎧"
+      }
+    ]
+  },
+
 
   cards: {
     heading: "Some Special Cards For You",
@@ -88,28 +113,29 @@ I want you to know that you are the most precious person in my life. Every day w
       "I did like you and i still respect what you said about being good friends. ✨",
       "The little things you do — your expressions, your laughter, the way you talk — they've all become my favorite details. 🌸"
     ]
+  },
+  cards: {
+    heading: "New Year Wishes for You 💖",
+    subheading: "Tap each card, Baby — I’ve hidden my wishes inside ✨",
+    tapLabel: "✨ Tap!",
+    progress: {
+      start: "Go on Baby, tap a card and feel my love 💕",
+      discovered: (n, total) => `${n} of ${total} wishes opened — more love waiting for you 🎉`,
+      complete: "Yay! You’ve opened all my wishes, Baby 🎊💖"
     },
-    cards: {
-      heading: "New Year Wishes",
-      subheading: "Tap each card for a special New Year message!",
-      tapLabel: "✨ Tap!",
-      progress: {
-        start: "Start by tapping any card above ✨",
-        discovered: (n, total) => `${n} of ${total} wishes discovered! Keep celebrating! 🎉`,
-        complete: "Awesome! You've revealed all the wishes! 🎊"
-      },
-      popup: {
-        title: "All Wishes Unlocked!",
-        message: "May every wish come true for you in 2026! ✨",
-        openFinal: "Open the Final Letter 💌",
-        stay: "Stay and celebrate more!"
-      },
-      cardMessages: [
-        "May your year be filled with new hopes, new joy, and new beginnings! 🎉",
-        "Wishing you health, wealth, and happiness in 2026! 🎊",
-        "May every day sparkle with positivity and love! 🎉"
-      ]
+    popup: {
+      title: "All My Wishes for You 💌",
+      message: "May every dream of yours come true — and may I always be part of it 💖",
+      openFinal: "Open My Final Letter 💕",
+      stay: "Stay here with me a little longer 💫"
     },
+    cardMessages: [
+      "My first wish for you is endless happiness — because your smile is my favorite thing in the world 💕",
+      "I wish you success in everything you do, and promise to stand by you in every step you take 🫶",
+      "No matter what this year brings, my biggest wish is us — together, always 💖"
+    ]
+  },
+
 
   finalLetter: {
     title: "Final Love Letter",
@@ -131,34 +157,36 @@ I want you to know that you are the most precious person in my life. Every day w
       "You are amazing in every way... and honestly, I feel like I haven't good enough for you."
     ],
     sealingNote: "Sealing will finish the experience."
-    },
-    finalLetter: {
-      title: "Final New Year Wish",
-      sealingText: "Sealing your wish...",
-      sealButton: "Seal this Wish 🎉",
-      restartButton: "Restart",
-      sealedTitle: "Wish Sealed for 2026",
-      sealedSubtitle: "Wishing You a Wonderful Year!",
-      typedDefault: "Happy New Year! 🎊",
-      experienceAgain: "Experience Again ✨",
-      sendKissButton: "Send a Virtual Hug 🤗",
-      dateLocale: "en-US",
-      // Letter content
-      letterGreeting: "Dear Friend,",
-      letterParagraphs: [
-        "May 2026 bring you endless opportunities and beautiful moments.",
-        "Celebrate every day, cherish every memory, and keep moving forward with hope.",
-        "Thank you for being part of my journey. Here's to new adventures together!",
-        "Wishing you a year as bright and wonderful as you are."
-      ],
-      sealingNote: "Sealing will finish the celebration."
-    },
+  },
+  finalLetter: {
+    title: "My Final New Year Wish for You 💌",
+    sealingText: "Sealing my love for you...",
+    sealButton: "Seal This Wish 💖",
+    restartButton: "Restart",
+    sealedTitle: "Wish Sealed for 2026 💫",
+    sealedSubtitle: "A Year Filled With Love, Us & Forever",
+    typedDefault: "Happy New Year, My Baby 💕",
+    experienceAgain: "Relive Our Love ✨",
+    sendKissButton: "Send a Virtual Hug 🤗",
+    dateLocale: "en-US",
+
+    // Letter content
+    letterGreeting: "My Dearest Baby 💖,",
+    letterParagraphs: [
+      "Our story began on July 28th, 2024 — just two hearts starting a conversation, unaware that it would turn into everything.",
+      "Then on January 1st, 2025, you proposed to me and changed my life forever.",
+      "Thank you for loving me more than I love myself, for caring endlessly, and for standing by me through everything.",
+      "As we step into 2026, my only wish is us — growing, dreaming, and loving together always."
+    ],
+    sealingNote: "Sealing this wish means sealing my heart with yours 💕"
+  },
+
 
   common: {
     continue: "Continue to Next ✨",
     close: "Close",
     ok: "OK"
-    }
+  }
 };
 
 export default textConfig;
