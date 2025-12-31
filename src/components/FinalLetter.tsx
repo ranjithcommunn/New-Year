@@ -165,7 +165,7 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
             </article>
 
             <div className="mt-6 flex flex-col sm:flex-row justify-between gap-3 items-center">
-              <div className="handwriting text-xs text-[#9a4c73]">{textConfig.finalLetter.sealingNote}</div>
+              <div className="handwriting text-sm text-[#9a4c73]">{textConfig.finalLetter.sealingNote}</div>
               <div className="flex gap-3">
                 <button
                   onClick={() => {
@@ -175,13 +175,13 @@ export default function FinalLetter({ onRestart }: FinalLetterProps) {
                 >
                   {textConfig.finalLetter.sealButton}
                 </button>
-
+                {/* 
                 <button
                   onClick={onRestart}
                   className="handwriting rounded-full bg-[#9be7c4] px-4 py-2.5 text-sm sm:text-base font-medium shadow-md hover:brightness-95 transition"
                 >
                   {textConfig.finalLetter.restartButton}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
